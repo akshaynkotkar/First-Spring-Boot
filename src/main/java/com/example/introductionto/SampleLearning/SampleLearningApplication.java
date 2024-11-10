@@ -18,6 +18,8 @@ public class SampleLearningApplication implements CommandLineRunner {
 	}
 @Autowired
 Apple obj2;
+	@Autowired
+	DBService dbService;
 	@Override
 	public void run(String... args) throws Exception {
 		obj1.eatApple();// This will give an runtime error null ptr exception need to make a bean of apple class
@@ -45,6 +47,12 @@ I'm eating the Apple
 1841945133
 
 
+		 */
+		System.out.println(dbService.getData());// this obj used to take the data
+		/*
+		Required 1 Bean but 2 were found error
+		Here in this case created two beans but need to make one bean as primary else it will
+		throw an error
 		 */
 	}
 }
